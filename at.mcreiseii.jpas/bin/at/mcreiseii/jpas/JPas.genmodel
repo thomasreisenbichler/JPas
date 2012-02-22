@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/at.mcreiseii.jpas/src-gen"
+    editDirectory="/at.mcreiseii.jpas.edit/src" editorDirectory="/at.mcreiseii.jpas.editor/src"
+    modelPluginID="at.mcreiseii.jpas" forceOverwrite="true" modelName="JPas" updateClasspath="false"
+    rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" complianceLevel="5.0"
+    copyrightFields="false" editPluginID="at.mcreiseii.jpas.edit" editorPluginID="at.mcreiseii.jpas.editor">
+  <genPackages prefix="JPas" basePackage="at.mcreiseii.jpas" disposableProviderFactory="true"
+      ecorePackage="JPas.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JPas.ecore#//Operator">
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Operator/equal"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Operator/less"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Operator/lessorequal"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Operator/greater"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Operator/greaterorequal"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Operator/notequal"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="JPas.ecore#//Datatype">
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Datatype/String"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Datatype/Boolean"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Datatype/Integer"/>
+      <genEnumLiterals ecoreEnumLiteral="JPas.ecore#//Datatype/Float"/>
+    </genEnums>
+    <genClasses ecoreClass="JPas.ecore#//Model">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Model/program"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Program">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Program/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Program/methods"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Program/variableDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Program/statementsequence"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Method">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Method/variableDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Method/statementsequence"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Function">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Function/params"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Function/returntype"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Procedure">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Procedure/params"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//ProcParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//ProcParam/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//ProcParam/type"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Param">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Param/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Param/type"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//VariableDeclaration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//VariableDeclaration/variables"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Variable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Variable/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Variable/name"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//StatementSequence">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//StatementSequence/statements"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Statement"/>
+    <genClasses ecoreClass="JPas.ecore#//IfStatement"/>
+    <genClasses ecoreClass="JPas.ecore#//WhileStatement"/>
+    <genClasses ecoreClass="JPas.ecore#//AssignStatement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//AssignStatement/variable"/>
+    </genClasses>
+    <genClasses ecoreClass="JPas.ecore#//Condition">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Condition/ifstatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Condition/elsestatements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Condition/whilestatements"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Condition/left"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Condition/operator"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Condition/right"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

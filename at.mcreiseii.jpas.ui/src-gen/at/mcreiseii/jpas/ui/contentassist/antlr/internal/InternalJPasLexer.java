@@ -14,7 +14,7 @@ import java.util.ArrayList;
 public class InternalJPasLexer extends Lexer {
     public static final int T__42=42;
     public static final int T__40=40;
-    public static final int RULE_ID=13;
+    public static final int RULE_ID=12;
     public static final int T__41=41;
     public static final int T__29=29;
     public static final int RULE_RBRACE=8;
@@ -29,7 +29,7 @@ public class InternalJPasLexer extends Lexer {
     public static final int RULE_ANY_OTHER=17;
     public static final int T__21=21;
     public static final int T__20=20;
-    public static final int RULE_COMMA=11;
+    public static final int RULE_COMMA=13;
     public static final int RULE_SL_COMMENT=15;
     public static final int EOF=-1;
     public static final int RULE_ML_COMMENT=14;
@@ -50,7 +50,7 @@ public class InternalJPasLexer extends Lexer {
     public static final int T__39=39;
     public static final int RULE_INT=4;
     public static final int RULE_LBRACE=7;
-    public static final int RULE_ASSIGNSYM=12;
+    public static final int RULE_ASSIGNSYM=11;
     public static final int RULE_WS=16;
 
     // delegates
@@ -590,8 +590,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_ASSIGNSYM;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3439:16: ( ':=' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3439:18: ':='
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3582:16: ( ':=' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3582:18: ':='
             {
             match(":="); 
 
@@ -611,8 +611,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_DOT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3441:10: ( '.' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3441:12: '.'
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3584:10: ( '.' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3584:12: '.'
             {
             match('.'); 
 
@@ -631,8 +631,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_COLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3443:12: ( ':' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3443:14: ':'
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3586:12: ( ':' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3586:14: ':'
             {
             match(':'); 
 
@@ -651,8 +651,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_SEMICOLON;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3445:16: ( ';' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3445:18: ';'
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3588:16: ( ';' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3588:18: ';'
             {
             match(';'); 
 
@@ -671,8 +671,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_COMMA;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3447:12: ( ',' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3447:14: ','
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3590:12: ( ',' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3590:14: ','
             {
             match(','); 
 
@@ -691,8 +691,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_LBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3449:13: ( '(' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3449:15: '('
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3592:13: ( '(' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3592:15: '('
             {
             match('('); 
 
@@ -711,8 +711,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_RBRACE;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3451:13: ( ')' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3451:15: ')'
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3594:13: ( ')' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3594:15: ')'
             {
             match(')'); 
 
@@ -731,10 +731,10 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_ID;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3453:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3453:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3596:9: ( ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )* )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3596:11: ( '^' )? ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             {
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3453:11: ( '^' )?
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3596:11: ( '^' )?
             int alt1=2;
             int LA1_0 = input.LA(1);
 
@@ -743,7 +743,7 @@ public class InternalJPasLexer extends Lexer {
             }
             switch (alt1) {
                 case 1 :
-                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3453:11: '^'
+                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3596:11: '^'
                     {
                     match('^'); 
 
@@ -761,7 +761,7 @@ public class InternalJPasLexer extends Lexer {
                 recover(mse);
                 throw mse;}
 
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3453:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3596:40: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | '0' .. '9' )*
             loop2:
             do {
                 int alt2=2;
@@ -810,10 +810,10 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_INT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3455:10: ( ( '0' .. '9' )+ )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3455:12: ( '0' .. '9' )+
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3598:10: ( ( '0' .. '9' )+ )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3598:12: ( '0' .. '9' )+
             {
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3455:12: ( '0' .. '9' )+
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3598:12: ( '0' .. '9' )+
             int cnt3=0;
             loop3:
             do {
@@ -827,7 +827,7 @@ public class InternalJPasLexer extends Lexer {
 
                 switch (alt3) {
             	case 1 :
-            	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3455:13: '0' .. '9'
+            	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3598:13: '0' .. '9'
             	    {
             	    matchRange('0','9'); 
 
@@ -859,10 +859,10 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_STRING;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:13: ( ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' ) )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             {
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:15: ( '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"' | '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\'' )
             int alt6=2;
             int LA6_0 = input.LA(1);
 
@@ -880,10 +880,10 @@ public class InternalJPasLexer extends Lexer {
             }
             switch (alt6) {
                 case 1 :
-                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
+                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:16: '\"' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )* '\"'
                     {
                     match('\"'); 
-                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
+                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:20: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\"' ) ) )*
                     loop4:
                     do {
                         int alt4=3;
@@ -899,7 +899,7 @@ public class InternalJPasLexer extends Lexer {
 
                         switch (alt4) {
                     	case 1 :
-                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:21: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -915,7 +915,7 @@ public class InternalJPasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:66: ~ ( ( '\\\\' | '\"' ) )
+                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:66: ~ ( ( '\\\\' | '\"' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='!')||(input.LA(1)>='#' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -940,10 +940,10 @@ public class InternalJPasLexer extends Lexer {
                     }
                     break;
                 case 2 :
-                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
+                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:86: '\\'' ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )* '\\''
                     {
                     match('\''); 
-                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
+                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:91: ( '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' ) | ~ ( ( '\\\\' | '\\'' ) ) )*
                     loop5:
                     do {
                         int alt5=3;
@@ -959,7 +959,7 @@ public class InternalJPasLexer extends Lexer {
 
                         switch (alt5) {
                     	case 1 :
-                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
+                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:92: '\\\\' ( 'b' | 't' | 'n' | 'f' | 'r' | 'u' | '\"' | '\\'' | '\\\\' )
                     	    {
                     	    match('\\'); 
                     	    if ( input.LA(1)=='\"'||input.LA(1)=='\''||input.LA(1)=='\\'||input.LA(1)=='b'||input.LA(1)=='f'||input.LA(1)=='n'||input.LA(1)=='r'||(input.LA(1)>='t' && input.LA(1)<='u') ) {
@@ -975,7 +975,7 @@ public class InternalJPasLexer extends Lexer {
                     	    }
                     	    break;
                     	case 2 :
-                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3457:137: ~ ( ( '\\\\' | '\\'' ) )
+                    	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3600:137: ~ ( ( '\\\\' | '\\'' ) )
                     	    {
                     	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='&')||(input.LA(1)>='(' && input.LA(1)<='[')||(input.LA(1)>=']' && input.LA(1)<='\uFFFF') ) {
                     	        input.consume();
@@ -1018,12 +1018,12 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_ML_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3459:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3459:19: '/*' ( options {greedy=false; } : . )* '*/'
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3602:17: ( '/*' ( options {greedy=false; } : . )* '*/' )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3602:19: '/*' ( options {greedy=false; } : . )* '*/'
             {
             match("/*"); 
 
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3459:24: ( options {greedy=false; } : . )*
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3602:24: ( options {greedy=false; } : . )*
             loop7:
             do {
                 int alt7=2;
@@ -1048,7 +1048,7 @@ public class InternalJPasLexer extends Lexer {
 
                 switch (alt7) {
             	case 1 :
-            	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3459:52: .
+            	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3602:52: .
             	    {
             	    matchAny(); 
 
@@ -1078,12 +1078,12 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_SL_COMMENT;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:17: ( '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )? )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:19: '//' (~ ( ( '\\n' | '\\r' ) ) )* ( ( '\\r' )? '\\n' )?
             {
             match("//"); 
 
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:24: (~ ( ( '\\n' | '\\r' ) ) )*
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:24: (~ ( ( '\\n' | '\\r' ) ) )*
             loop8:
             do {
                 int alt8=2;
@@ -1096,7 +1096,7 @@ public class InternalJPasLexer extends Lexer {
 
                 switch (alt8) {
             	case 1 :
-            	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:24: ~ ( ( '\\n' | '\\r' ) )
+            	    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:24: ~ ( ( '\\n' | '\\r' ) )
             	    {
             	    if ( (input.LA(1)>='\u0000' && input.LA(1)<='\t')||(input.LA(1)>='\u000B' && input.LA(1)<='\f')||(input.LA(1)>='\u000E' && input.LA(1)<='\uFFFF') ) {
             	        input.consume();
@@ -1116,7 +1116,7 @@ public class InternalJPasLexer extends Lexer {
                 }
             } while (true);
 
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:40: ( ( '\\r' )? '\\n' )?
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:40: ( ( '\\r' )? '\\n' )?
             int alt10=2;
             int LA10_0 = input.LA(1);
 
@@ -1125,9 +1125,9 @@ public class InternalJPasLexer extends Lexer {
             }
             switch (alt10) {
                 case 1 :
-                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:41: ( '\\r' )? '\\n'
+                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:41: ( '\\r' )? '\\n'
                     {
-                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:41: ( '\\r' )?
+                    // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:41: ( '\\r' )?
                     int alt9=2;
                     int LA9_0 = input.LA(1);
 
@@ -1136,7 +1136,7 @@ public class InternalJPasLexer extends Lexer {
                     }
                     switch (alt9) {
                         case 1 :
-                            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3461:41: '\\r'
+                            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3604:41: '\\r'
                             {
                             match('\r'); 
 
@@ -1168,10 +1168,10 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_WS;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3463:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3463:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3606:9: ( ( ' ' | '\\t' | '\\r' | '\\n' )+ )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             {
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3463:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3606:11: ( ' ' | '\\t' | '\\r' | '\\n' )+
             int cnt11=0;
             loop11:
             do {
@@ -1225,8 +1225,8 @@ public class InternalJPasLexer extends Lexer {
         try {
             int _type = RULE_ANY_OTHER;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3465:16: ( . )
-            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3465:18: .
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3608:16: ( . )
+            // ../at.mcreiseii.jpas.ui/src-gen/at/mcreiseii/jpas/ui/contentassist/antlr/internal/InternalJPas.g:3608:18: .
             {
             matchAny(); 
 

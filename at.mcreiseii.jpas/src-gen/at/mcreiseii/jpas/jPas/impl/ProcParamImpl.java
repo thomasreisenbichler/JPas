@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link at.mcreiseii.jpas.jPas.impl.ProcParamImpl#getOut <em>Out</em>}</li>
  *   <li>{@link at.mcreiseii.jpas.jPas.impl.ProcParamImpl#getName <em>Name</em>}</li>
  *   <li>{@link at.mcreiseii.jpas.jPas.impl.ProcParamImpl#getType <em>Type</em>}</li>
  * </ul>
@@ -32,6 +33,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class ProcParamImpl extends MinimalEObjectImpl.Container implements ProcParam
 {
+  /**
+   * The default value of the '{@link #getOut() <em>Out</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOut()
+   * @generated
+   * @ordered
+   */
+  protected static final String OUT_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getOut() <em>Out</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getOut()
+   * @generated
+   * @ordered
+   */
+  protected String out = OUT_EDEFAULT;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -98,6 +119,29 @@ public class ProcParamImpl extends MinimalEObjectImpl.Container implements ProcP
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getOut()
+  {
+    return out;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setOut(String newOut)
+  {
+    String oldOut = out;
+    out = newOut;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, JPasPackage.PROC_PARAM__OUT, oldOut, out));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -149,6 +193,8 @@ public class ProcParamImpl extends MinimalEObjectImpl.Container implements ProcP
   {
     switch (featureID)
     {
+      case JPasPackage.PROC_PARAM__OUT:
+        return getOut();
       case JPasPackage.PROC_PARAM__NAME:
         return getName();
       case JPasPackage.PROC_PARAM__TYPE:
@@ -167,6 +213,9 @@ public class ProcParamImpl extends MinimalEObjectImpl.Container implements ProcP
   {
     switch (featureID)
     {
+      case JPasPackage.PROC_PARAM__OUT:
+        setOut((String)newValue);
+        return;
       case JPasPackage.PROC_PARAM__NAME:
         setName((String)newValue);
         return;
@@ -187,6 +236,9 @@ public class ProcParamImpl extends MinimalEObjectImpl.Container implements ProcP
   {
     switch (featureID)
     {
+      case JPasPackage.PROC_PARAM__OUT:
+        setOut(OUT_EDEFAULT);
+        return;
       case JPasPackage.PROC_PARAM__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -207,6 +259,8 @@ public class ProcParamImpl extends MinimalEObjectImpl.Container implements ProcP
   {
     switch (featureID)
     {
+      case JPasPackage.PROC_PARAM__OUT:
+        return OUT_EDEFAULT == null ? out != null : !OUT_EDEFAULT.equals(out);
       case JPasPackage.PROC_PARAM__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case JPasPackage.PROC_PARAM__TYPE:
@@ -226,7 +280,9 @@ public class ProcParamImpl extends MinimalEObjectImpl.Container implements ProcP
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (out: ");
+    result.append(out);
+    result.append(", name: ");
     result.append(name);
     result.append(", type: ");
     result.append(type);

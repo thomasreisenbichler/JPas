@@ -5,10 +5,10 @@
  */
 package at.mcreiseii.jpas.jPas.impl;
 
+import at.mcreiseii.jpas.jPas.Function;
 import at.mcreiseii.jpas.jPas.JPasPackage;
 import at.mcreiseii.jpas.jPas.Method;
-import at.mcreiseii.jpas.jPas.StatementSequence;
-import at.mcreiseii.jpas.jPas.VariableDeclaration;
+import at.mcreiseii.jpas.jPas.Procedure;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link at.mcreiseii.jpas.jPas.impl.MethodImpl#getVariableDeclaration <em>Variable Declaration</em>}</li>
- *   <li>{@link at.mcreiseii.jpas.jPas.impl.MethodImpl#getStatementsequence <em>Statementsequence</em>}</li>
+ *   <li>{@link at.mcreiseii.jpas.jPas.impl.MethodImpl#getFunction <em>Function</em>}</li>
+ *   <li>{@link at.mcreiseii.jpas.jPas.impl.MethodImpl#getProcedure <em>Procedure</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,24 +36,24 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 public class MethodImpl extends MinimalEObjectImpl.Container implements Method
 {
   /**
-   * The cached value of the '{@link #getVariableDeclaration() <em>Variable Declaration</em>}' containment reference.
+   * The cached value of the '{@link #getFunction() <em>Function</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariableDeclaration()
+   * @see #getFunction()
    * @generated
    * @ordered
    */
-  protected VariableDeclaration variableDeclaration;
+  protected Function function;
 
   /**
-   * The cached value of the '{@link #getStatementsequence() <em>Statementsequence</em>}' containment reference.
+   * The cached value of the '{@link #getProcedure() <em>Procedure</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getStatementsequence()
+   * @see #getProcedure()
    * @generated
    * @ordered
    */
-  protected StatementSequence statementsequence;
+  protected Procedure procedure;
 
   /**
    * <!-- begin-user-doc -->
@@ -81,9 +81,9 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public VariableDeclaration getVariableDeclaration()
+  public Function getFunction()
   {
-    return variableDeclaration;
+    return function;
   }
 
   /**
@@ -91,13 +91,13 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetVariableDeclaration(VariableDeclaration newVariableDeclaration, NotificationChain msgs)
+  public NotificationChain basicSetFunction(Function newFunction, NotificationChain msgs)
   {
-    VariableDeclaration oldVariableDeclaration = variableDeclaration;
-    variableDeclaration = newVariableDeclaration;
+    Function oldFunction = function;
+    function = newFunction;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__VARIABLE_DECLARATION, oldVariableDeclaration, newVariableDeclaration);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__FUNCTION, oldFunction, newFunction);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -108,20 +108,20 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setVariableDeclaration(VariableDeclaration newVariableDeclaration)
+  public void setFunction(Function newFunction)
   {
-    if (newVariableDeclaration != variableDeclaration)
+    if (newFunction != function)
     {
       NotificationChain msgs = null;
-      if (variableDeclaration != null)
-        msgs = ((InternalEObject)variableDeclaration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__VARIABLE_DECLARATION, null, msgs);
-      if (newVariableDeclaration != null)
-        msgs = ((InternalEObject)newVariableDeclaration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__VARIABLE_DECLARATION, null, msgs);
-      msgs = basicSetVariableDeclaration(newVariableDeclaration, msgs);
+      if (function != null)
+        msgs = ((InternalEObject)function).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__FUNCTION, null, msgs);
+      if (newFunction != null)
+        msgs = ((InternalEObject)newFunction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__FUNCTION, null, msgs);
+      msgs = basicSetFunction(newFunction, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__VARIABLE_DECLARATION, newVariableDeclaration, newVariableDeclaration));
+      eNotify(new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__FUNCTION, newFunction, newFunction));
   }
 
   /**
@@ -129,9 +129,9 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public StatementSequence getStatementsequence()
+  public Procedure getProcedure()
   {
-    return statementsequence;
+    return procedure;
   }
 
   /**
@@ -139,13 +139,13 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetStatementsequence(StatementSequence newStatementsequence, NotificationChain msgs)
+  public NotificationChain basicSetProcedure(Procedure newProcedure, NotificationChain msgs)
   {
-    StatementSequence oldStatementsequence = statementsequence;
-    statementsequence = newStatementsequence;
+    Procedure oldProcedure = procedure;
+    procedure = newProcedure;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__STATEMENTSEQUENCE, oldStatementsequence, newStatementsequence);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__PROCEDURE, oldProcedure, newProcedure);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -156,20 +156,20 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setStatementsequence(StatementSequence newStatementsequence)
+  public void setProcedure(Procedure newProcedure)
   {
-    if (newStatementsequence != statementsequence)
+    if (newProcedure != procedure)
     {
       NotificationChain msgs = null;
-      if (statementsequence != null)
-        msgs = ((InternalEObject)statementsequence).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__STATEMENTSEQUENCE, null, msgs);
-      if (newStatementsequence != null)
-        msgs = ((InternalEObject)newStatementsequence).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__STATEMENTSEQUENCE, null, msgs);
-      msgs = basicSetStatementsequence(newStatementsequence, msgs);
+      if (procedure != null)
+        msgs = ((InternalEObject)procedure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__PROCEDURE, null, msgs);
+      if (newProcedure != null)
+        msgs = ((InternalEObject)newProcedure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - JPasPackage.METHOD__PROCEDURE, null, msgs);
+      msgs = basicSetProcedure(newProcedure, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__STATEMENTSEQUENCE, newStatementsequence, newStatementsequence));
+      eNotify(new ENotificationImpl(this, Notification.SET, JPasPackage.METHOD__PROCEDURE, newProcedure, newProcedure));
   }
 
   /**
@@ -182,10 +182,10 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
   {
     switch (featureID)
     {
-      case JPasPackage.METHOD__VARIABLE_DECLARATION:
-        return basicSetVariableDeclaration(null, msgs);
-      case JPasPackage.METHOD__STATEMENTSEQUENCE:
-        return basicSetStatementsequence(null, msgs);
+      case JPasPackage.METHOD__FUNCTION:
+        return basicSetFunction(null, msgs);
+      case JPasPackage.METHOD__PROCEDURE:
+        return basicSetProcedure(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -200,10 +200,10 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
   {
     switch (featureID)
     {
-      case JPasPackage.METHOD__VARIABLE_DECLARATION:
-        return getVariableDeclaration();
-      case JPasPackage.METHOD__STATEMENTSEQUENCE:
-        return getStatementsequence();
+      case JPasPackage.METHOD__FUNCTION:
+        return getFunction();
+      case JPasPackage.METHOD__PROCEDURE:
+        return getProcedure();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -218,11 +218,11 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
   {
     switch (featureID)
     {
-      case JPasPackage.METHOD__VARIABLE_DECLARATION:
-        setVariableDeclaration((VariableDeclaration)newValue);
+      case JPasPackage.METHOD__FUNCTION:
+        setFunction((Function)newValue);
         return;
-      case JPasPackage.METHOD__STATEMENTSEQUENCE:
-        setStatementsequence((StatementSequence)newValue);
+      case JPasPackage.METHOD__PROCEDURE:
+        setProcedure((Procedure)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -238,11 +238,11 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
   {
     switch (featureID)
     {
-      case JPasPackage.METHOD__VARIABLE_DECLARATION:
-        setVariableDeclaration((VariableDeclaration)null);
+      case JPasPackage.METHOD__FUNCTION:
+        setFunction((Function)null);
         return;
-      case JPasPackage.METHOD__STATEMENTSEQUENCE:
-        setStatementsequence((StatementSequence)null);
+      case JPasPackage.METHOD__PROCEDURE:
+        setProcedure((Procedure)null);
         return;
     }
     super.eUnset(featureID);
@@ -258,10 +258,10 @@ public class MethodImpl extends MinimalEObjectImpl.Container implements Method
   {
     switch (featureID)
     {
-      case JPasPackage.METHOD__VARIABLE_DECLARATION:
-        return variableDeclaration != null;
-      case JPasPackage.METHOD__STATEMENTSEQUENCE:
-        return statementsequence != null;
+      case JPasPackage.METHOD__FUNCTION:
+        return function != null;
+      case JPasPackage.METHOD__PROCEDURE:
+        return procedure != null;
     }
     return super.eIsSet(featureID);
   }

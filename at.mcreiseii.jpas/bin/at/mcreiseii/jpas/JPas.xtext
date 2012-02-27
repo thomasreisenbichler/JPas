@@ -6,40 +6,62 @@ Model:
 	program=Program;
 	
 Program:
-	"program" name=ID (methods+=Method)* (variableDeclaration=VariableDeclaration)? statementsequence=StatementSequence dot;
+	"program" 
+	name=ID (methods+=Method)* 
+	(variableDeclaration=VariableDeclaration)? 
+	statementsequence=StatementSequence 
+	dot;
 	
 Method:
-	Function | Procedure;
+	function=Function | procedure=Procedure;
 	
 Function:
-	"function" lbrace (params+=Param)* rbrace colon returntype=Datatype (variableDeclaration=VariableDeclaration)? statementsequence=StatementSequence semicolon;
+	"function" name=ID
+	lbrace (params+=Param)* rbrace colon returntype=Datatype 
+	(variableDeclaration=VariableDeclaration)? 
+	statementsequence=StatementSequence 
+	semicolon;
 
 Procedure:
-	"procedure" lbrace (params+=ProcParam)* rbrace (variableDeclaration=VariableDeclaration)? statementsequence=StatementSequence semicolon;
+	"procedure" name=ID
+	lbrace (params+=ProcParam)* rbrace 
+	(variableDeclaration=VariableDeclaration)? 
+	statementsequence=StatementSequence 
+	semicolon;
 
 ProcParam:
-	("var")? name=ID colon type=Datatype comma?;
+	out=("var")? 
+	name=ID colon type=Datatype semicolon?;
 
 Param:
 	name=ID colon type=Datatype semicolon?;
 	
 VariableDeclaration:
-	"var" (variables+=Variable)+;
+	"var" 
+	(variables+=Variable)+;
 
 Variable:
-	type=Datatype colon name=ID semicolon?;	
+	name=ID colon type=Datatype semicolon;	
 	
 StatementSequence:
-	"begin" (statements+=Statement)* "end";
+	"begin" 
+	(statements+=Statement)* 
+	"end";
 	
 Statement:
-	(IfStatement | WhileStatement | AssignStatement) semicolon;
+	(IfStatement | 
+	 WhileStatement | 
+	 AssignStatement)
+	semicolon;
 
 IfStatement:
-	"if" lbrace Condition rbrace "then" ifstatements=StatementSequence ("else" elsestatements=StatementSequence)?;
+	"if" lbrace Condition rbrace "then" 
+	ifstatements=StatementSequence 
+	("else" elsestatements=StatementSequence)?;
 	
 WhileStatement:
-	"while" lbrace Condition rbrace "do" whilestatements=StatementSequence?;
+	"while" lbrace Condition rbrace "do" 
+	whilestatements=StatementSequence?;
 	
 AssignStatement:
 	variable=ID assignSym Expression;	
@@ -57,7 +79,12 @@ Term:
 	INT | STRING;
 
 enum Operator:
-	equal="==" | less="<" | lessorequal="<=" | greater=">" | greaterorequal=">=" | notequal="!=";
+	equal="==" | 
+	less="<" | 
+	lessorequal="<=" | 
+	greater=">" | 
+	greaterorequal=">=" | 
+	notequal="!=";
 
 enum Datatype:
 	String="string" | Boolean="boolean" | Integer="integer" | Float="real";

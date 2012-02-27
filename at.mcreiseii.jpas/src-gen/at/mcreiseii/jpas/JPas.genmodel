@@ -32,17 +32,24 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Program/statementsequence"/>
     </genClasses>
     <genClasses ecoreClass="JPas.ecore#//Method">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Method/variableDeclaration"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Method/statementsequence"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Method/function"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Method/procedure"/>
     </genClasses>
     <genClasses ecoreClass="JPas.ecore#//Function">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Function/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Function/params"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Function/returntype"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Function/variableDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Function/statementsequence"/>
     </genClasses>
     <genClasses ecoreClass="JPas.ecore#//Procedure">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Procedure/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Procedure/params"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Procedure/variableDeclaration"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//Procedure/statementsequence"/>
     </genClasses>
     <genClasses ecoreClass="JPas.ecore#//ProcParam">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//ProcParam/out"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//ProcParam/name"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//ProcParam/type"/>
     </genClasses>
@@ -54,8 +61,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//VariableDeclaration/variables"/>
     </genClasses>
     <genClasses ecoreClass="JPas.ecore#//Variable">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Variable/type"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Variable/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute JPas.ecore#//Variable/type"/>
     </genClasses>
     <genClasses ecoreClass="JPas.ecore#//StatementSequence">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference JPas.ecore#//StatementSequence/statements"/>

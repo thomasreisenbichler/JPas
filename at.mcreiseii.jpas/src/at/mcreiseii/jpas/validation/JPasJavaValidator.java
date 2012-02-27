@@ -6,30 +6,50 @@ import at.mcreiseii.jpas.jPas.*;
 public class JPasJavaValidator extends AbstractJPasJavaValidator {
 	
 	@Check
-	public void CheckVariableDuplicates(VariableDeclaration VarDecl){
-		for(Variable var : VarDecl.getVariables()){
-			if(VarDecl.getVariables().toString().indexOf(var.getName(), 0) != VarDecl.getVariables().toString().lastIndexOf(var.getName())){
-				error("Duplicate variable definition " + var.getName(), null);
+	public void CheckVariableDuplicates(Variable var){
+		VariableDeclaration varDecl = (VariableDeclaration) var.eContainer();
+		int count = 0;
+		
+		for(Variable temp : varDecl.getVariables()){
+			if(var.getName().equals(temp.getName())){
+				count++;
 			} // if
 		} // for
+		
+		if(count>1){
+			error("Duplicate variable definition " + var.getName(), JPasPackage.Literals.VARIABLE__NAME);
+		} // if
 	} // CheckVariableDuplicates
 
-	/*@Check
-	public void CheckDuplicateFunctionParams(Function func){
-		for(Param par : func.getParams()){
-			if(func.getParams().toString().indexOf(par.getName(), 0) != func.getParams().toString().lastIndexOf(par.getName())){
-				error("Duplicate param definition " + par.getName(), JPasPackage.Literals.PARAM__NAME);
+	@Check
+	public void CheckDuplicateFunctionParams(Param par){
+		Function func = (Function) par.eContainer();
+		int count = 0;
+		
+		for(Param temp : func.getParams()){
+			if(par.getName().equals(temp.getName())){
+				count++;
 			} // if
 		} // for
+		
+		if(count>1){
+			error("Duplicate param definition " + par.getName(), JPasPackage.Literals.PARAM__NAME);
+		} // if
 	} // CheckDuplicateFunctionParams
 	
 	@Check
-	public void CheckDuplicateProcedureParams(Procedure proc){
-		for(ProcParam par : proc.getParams()){
-			if(proc.getParams().toString().indexOf(par.getName(), 0) != proc.getParams().toString().lastIndexOf(par.getName())){
-				error("Duplicate param definition " + par.getName(), JPasPackage.Literals.PROC_PARAM__NAME);
+	public void CheckDuplicateProcedureParams(ProcParam par){
+		Procedure proc = (Procedure) par.eContainer();
+		int count = 0;
+		
+		for(ProcParam temp : proc.getParams()){
+			if(par.getName().equals(temp.getName())){
+				count++;
 			} // if
 		} // for
+		
+		if(count>1){
+			error("Duplicate param definition " + par.getName(), JPasPackage.Literals.PROC_PARAM__NAME);
+		} // if
 	} // CheckDuplicateProcedureParams*/
-	
 }

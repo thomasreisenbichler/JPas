@@ -17,21 +17,32 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Method">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="function" eType="#//Function"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="procedure" eType="#//Procedure"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Function">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
+        eType="#//Param" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returntype" eType="#//Datatype"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="variableDeclaration" eType="#//VariableDeclaration"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="statementsequence" eType="#//StatementSequence"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Function" eSuperTypes="#//Method">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
-        eType="#//Param" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returntype" eType="#//Datatype"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Procedure" eSuperTypes="#//Method">
+  <eClassifiers xsi:type="ecore:EClass" name="Procedure">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1"
         eType="#//ProcParam" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="variableDeclaration" eType="#//VariableDeclaration"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="statementsequence" eType="#//StatementSequence"
+        containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ProcParam">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="out" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
   </eClassifiers>
@@ -44,8 +55,8 @@
         eType="#//Variable" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//Datatype"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StatementSequence">
     <eStructuralFeatures xsi:type="ecore:EReference" name="statements" upperBound="-1"

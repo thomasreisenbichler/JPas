@@ -15,8 +15,8 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link at.mcreiseii.jpas.jPas.Method#getVariableDeclaration <em>Variable Declaration</em>}</li>
- *   <li>{@link at.mcreiseii.jpas.jPas.Method#getStatementsequence <em>Statementsequence</em>}</li>
+ *   <li>{@link at.mcreiseii.jpas.jPas.Method#getFunction <em>Function</em>}</li>
+ *   <li>{@link at.mcreiseii.jpas.jPas.Method#getProcedure <em>Procedure</em>}</li>
  * </ul>
  * </p>
  *
@@ -27,55 +27,55 @@ import org.eclipse.emf.ecore.EObject;
 public interface Method extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Variable Declaration</b></em>' containment reference.
+   * Returns the value of the '<em><b>Function</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variable Declaration</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Function</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variable Declaration</em>' containment reference.
-   * @see #setVariableDeclaration(VariableDeclaration)
-   * @see at.mcreiseii.jpas.jPas.JPasPackage#getMethod_VariableDeclaration()
+   * @return the value of the '<em>Function</em>' containment reference.
+   * @see #setFunction(Function)
+   * @see at.mcreiseii.jpas.jPas.JPasPackage#getMethod_Function()
    * @model containment="true"
    * @generated
    */
-  VariableDeclaration getVariableDeclaration();
+  Function getFunction();
 
   /**
-   * Sets the value of the '{@link at.mcreiseii.jpas.jPas.Method#getVariableDeclaration <em>Variable Declaration</em>}' containment reference.
+   * Sets the value of the '{@link at.mcreiseii.jpas.jPas.Method#getFunction <em>Function</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Variable Declaration</em>' containment reference.
-   * @see #getVariableDeclaration()
+   * @param value the new value of the '<em>Function</em>' containment reference.
+   * @see #getFunction()
    * @generated
    */
-  void setVariableDeclaration(VariableDeclaration value);
+  void setFunction(Function value);
 
   /**
-   * Returns the value of the '<em><b>Statementsequence</b></em>' containment reference.
+   * Returns the value of the '<em><b>Procedure</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Statementsequence</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Procedure</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Statementsequence</em>' containment reference.
-   * @see #setStatementsequence(StatementSequence)
-   * @see at.mcreiseii.jpas.jPas.JPasPackage#getMethod_Statementsequence()
+   * @return the value of the '<em>Procedure</em>' containment reference.
+   * @see #setProcedure(Procedure)
+   * @see at.mcreiseii.jpas.jPas.JPasPackage#getMethod_Procedure()
    * @model containment="true"
    * @generated
    */
-  StatementSequence getStatementsequence();
+  Procedure getProcedure();
 
   /**
-   * Sets the value of the '{@link at.mcreiseii.jpas.jPas.Method#getStatementsequence <em>Statementsequence</em>}' containment reference.
+   * Sets the value of the '{@link at.mcreiseii.jpas.jPas.Method#getProcedure <em>Procedure</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Statementsequence</em>' containment reference.
-   * @see #getStatementsequence()
+   * @param value the new value of the '<em>Procedure</em>' containment reference.
+   * @see #getProcedure()
    * @generated
    */
-  void setStatementsequence(StatementSequence value);
+  void setProcedure(Procedure value);
 
 } // Method

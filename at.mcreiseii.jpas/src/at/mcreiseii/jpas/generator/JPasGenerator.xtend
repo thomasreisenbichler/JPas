@@ -7,9 +7,79 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.IGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess
 
+import at.mcreiseii.jpas.jPas.*
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import com.google.inject.Inject
+
+import static extension at.mcreiseii.jpas.generator.ResourceExtensions.*
+
 class JPasGenerator implements IGenerator {
 	
+	int paramcount = 0
+	int count = 0
+	@Inject extension IQualifiedNameProvider nameProvider
+	
 	override void doGenerate(Resource resource, IFileSystemAccess fsa) {
-		//TODO implement me
+		for(e: resource.allContentsIterable.filter(typeof(Program))){
+			fsa.generateFile(e.fullyQualifiedName.toString.replace(".", "/") + ".java", e.compile);
+		}
 	}
+	
+	def compile(Program p) '''
+		import java.lang.*;
+		
+		public class «p.name» {
+			«FOR m:p.methods»
+			  «m.compile»
+			«ENDFOR»
+			public static void main (int argc, char** argv){
+				«IF p.variableDeclaration != null»
+					«FOR variable: p.variableDeclaration.variables»
+						«variable.compile»
+					«ENDFOR»
+				«ENDIF»
+				«FOR state: p.statementsequence.statements»
+					«state.compile»
+				«ENDFOR»
+			} /* main */
+		} /* «p.name» */
+	'''
+	
+	def compile(Method m) '''
+		«IF m.function != null»
+			«m.function.compile»
+		«ENDIF»
+		«IF m.procedure != null»
+			«m.procedure.compile»
+		«ENDIF»
+	'''
+	
+	def compile(Function func) '''
+		«val paramcount = func.params.size»
+		public «func.returntype» «func.name» («FOR par: func.params»«val count=count+1»«par.type» «par.name»«IF count < paramcount», «ENDIF»«ENDFOR»){
+			«IF func.variableDeclaration != null»
+				«FOR variable: func.variableDeclaration.variables»
+					«variable.compile»
+				«ENDFOR»
+			«ENDIF»
+		} /* «func.name» */
+	'''
+	
+	def compile(Procedure proc) '''
+		«val paramcount = proc.params.size»
+		public void «proc.name» («FOR par: proc.params»«val count=count+1»«par.type» «par.name»«IF count < paramcount», «ENDIF»«ENDFOR»){
+			«IF proc.variableDeclaration != null»
+				«FOR variable: proc.variableDeclaration.variables»
+					«variable.compile»
+				«ENDFOR»
+			«ENDIF»
+		} /* «proc.name» */
+	'''
+	
+	def compile(Variable variable) '''
+		«variable.type» «variable.name»;
+	'''
+	
+	def compile(Statement state) '''
+	'''
 }

@@ -308,7 +308,7 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMethod_VariableDeclaration()
+  public EReference getMethod_Function()
   {
     return (EReference)methodEClass.getEStructuralFeatures().get(0);
   }
@@ -318,7 +318,7 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMethod_Statementsequence()
+  public EReference getMethod_Procedure()
   {
     return (EReference)methodEClass.getEStructuralFeatures().get(1);
   }
@@ -338,9 +338,19 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getFunction_Name()
+  {
+    return (EAttribute)functionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getFunction_Params()
   {
-    return (EReference)functionEClass.getEStructuralFeatures().get(0);
+    return (EReference)functionEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -350,7 +360,27 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    */
   public EAttribute getFunction_Returntype()
   {
-    return (EAttribute)functionEClass.getEStructuralFeatures().get(1);
+    return (EAttribute)functionEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunction_VariableDeclaration()
+  {
+    return (EReference)functionEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getFunction_Statementsequence()
+  {
+    return (EReference)functionEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -368,9 +398,39 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getProcedure_Name()
+  {
+    return (EAttribute)procedureEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getProcedure_Params()
   {
-    return (EReference)procedureEClass.getEStructuralFeatures().get(0);
+    return (EReference)procedureEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProcedure_VariableDeclaration()
+  {
+    return (EReference)procedureEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getProcedure_Statementsequence()
+  {
+    return (EReference)procedureEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -388,7 +448,7 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProcParam_Name()
+  public EAttribute getProcParam_Out()
   {
     return (EAttribute)procParamEClass.getEStructuralFeatures().get(0);
   }
@@ -398,9 +458,19 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getProcParam_Type()
+  public EAttribute getProcParam_Name()
   {
     return (EAttribute)procParamEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getProcParam_Type()
+  {
+    return (EAttribute)procParamEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -468,7 +538,7 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_Type()
+  public EAttribute getVariable_Name()
   {
     return (EAttribute)variableEClass.getEStructuralFeatures().get(0);
   }
@@ -478,7 +548,7 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_Name()
+  public EAttribute getVariable_Type()
   {
     return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
   }
@@ -683,17 +753,24 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
     createEReference(programEClass, PROGRAM__STATEMENTSEQUENCE);
 
     methodEClass = createEClass(METHOD);
-    createEReference(methodEClass, METHOD__VARIABLE_DECLARATION);
-    createEReference(methodEClass, METHOD__STATEMENTSEQUENCE);
+    createEReference(methodEClass, METHOD__FUNCTION);
+    createEReference(methodEClass, METHOD__PROCEDURE);
 
     functionEClass = createEClass(FUNCTION);
+    createEAttribute(functionEClass, FUNCTION__NAME);
     createEReference(functionEClass, FUNCTION__PARAMS);
     createEAttribute(functionEClass, FUNCTION__RETURNTYPE);
+    createEReference(functionEClass, FUNCTION__VARIABLE_DECLARATION);
+    createEReference(functionEClass, FUNCTION__STATEMENTSEQUENCE);
 
     procedureEClass = createEClass(PROCEDURE);
+    createEAttribute(procedureEClass, PROCEDURE__NAME);
     createEReference(procedureEClass, PROCEDURE__PARAMS);
+    createEReference(procedureEClass, PROCEDURE__VARIABLE_DECLARATION);
+    createEReference(procedureEClass, PROCEDURE__STATEMENTSEQUENCE);
 
     procParamEClass = createEClass(PROC_PARAM);
+    createEAttribute(procParamEClass, PROC_PARAM__OUT);
     createEAttribute(procParamEClass, PROC_PARAM__NAME);
     createEAttribute(procParamEClass, PROC_PARAM__TYPE);
 
@@ -705,8 +782,8 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
     createEReference(variableDeclarationEClass, VARIABLE_DECLARATION__VARIABLES);
 
     variableEClass = createEClass(VARIABLE);
-    createEAttribute(variableEClass, VARIABLE__TYPE);
     createEAttribute(variableEClass, VARIABLE__NAME);
+    createEAttribute(variableEClass, VARIABLE__TYPE);
 
     statementSequenceEClass = createEClass(STATEMENT_SEQUENCE);
     createEReference(statementSequenceEClass, STATEMENT_SEQUENCE__STATEMENTS);
@@ -762,8 +839,6 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
     // Set bounds for type parameters
 
     // Add supertypes to classes
-    functionEClass.getESuperTypes().add(this.getMethod());
-    procedureEClass.getESuperTypes().add(this.getMethod());
     ifStatementEClass.getESuperTypes().add(this.getStatement());
     whileStatementEClass.getESuperTypes().add(this.getStatement());
     assignStatementEClass.getESuperTypes().add(this.getStatement());
@@ -781,17 +856,24 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
     initEReference(getProgram_Statementsequence(), this.getStatementSequence(), null, "statementsequence", null, 0, 1, Program.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getMethod_VariableDeclaration(), this.getVariableDeclaration(), null, "variableDeclaration", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMethod_Statementsequence(), this.getStatementSequence(), null, "statementsequence", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethod_Function(), this.getFunction(), null, "function", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethod_Procedure(), this.getProcedure(), null, "procedure", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getFunction_Params(), this.getParam(), null, "params", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getFunction_Returntype(), this.getDatatype(), "returntype", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunction_VariableDeclaration(), this.getVariableDeclaration(), null, "variableDeclaration", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getFunction_Statementsequence(), this.getStatementSequence(), null, "statementsequence", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(procedureEClass, Procedure.class, "Procedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProcedure_Name(), ecorePackage.getEString(), "name", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getProcedure_Params(), this.getProcParam(), null, "params", null, 0, -1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcedure_VariableDeclaration(), this.getVariableDeclaration(), null, "variableDeclaration", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getProcedure_Statementsequence(), this.getStatementSequence(), null, "statementsequence", null, 0, 1, Procedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(procParamEClass, ProcParam.class, "ProcParam", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getProcParam_Out(), ecorePackage.getEString(), "out", null, 0, 1, ProcParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProcParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, ProcParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getProcParam_Type(), this.getDatatype(), "type", null, 0, 1, ProcParam.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -803,8 +885,8 @@ public class JPasPackageImpl extends EPackageImpl implements JPasPackage
     initEReference(getVariableDeclaration_Variables(), this.getVariable(), null, "variables", null, 0, -1, VariableDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getVariable_Type(), this.getDatatype(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getVariable_Type(), this.getDatatype(), "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(statementSequenceEClass, StatementSequence.class, "StatementSequence", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getStatementSequence_Statements(), this.getStatement(), null, "statements", null, 0, -1, StatementSequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

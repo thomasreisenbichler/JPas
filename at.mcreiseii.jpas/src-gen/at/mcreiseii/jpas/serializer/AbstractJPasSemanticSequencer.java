@@ -4,6 +4,7 @@ import at.mcreiseii.jpas.jPas.AssignStatement;
 import at.mcreiseii.jpas.jPas.Condition;
 import at.mcreiseii.jpas.jPas.Function;
 import at.mcreiseii.jpas.jPas.JPasPackage;
+import at.mcreiseii.jpas.jPas.Method;
 import at.mcreiseii.jpas.jPas.Model;
 import at.mcreiseii.jpas.jPas.Param;
 import at.mcreiseii.jpas.jPas.ProcParam;
@@ -78,9 +79,14 @@ public class AbstractJPasSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case JPasPackage.FUNCTION:
-				if(context == grammarAccess.getFunctionRule() ||
-				   context == grammarAccess.getMethodRule()) {
+				if(context == grammarAccess.getFunctionRule()) {
 					sequence_Function(context, (Function) semanticObject); 
+					return; 
+				}
+				else break;
+			case JPasPackage.METHOD:
+				if(context == grammarAccess.getMethodRule()) {
+					sequence_Method(context, (Method) semanticObject); 
 					return; 
 				}
 				else break;
@@ -103,8 +109,7 @@ public class AbstractJPasSemanticSequencer extends AbstractSemanticSequencer {
 				}
 				else break;
 			case JPasPackage.PROCEDURE:
-				if(context == grammarAccess.getMethodRule() ||
-				   context == grammarAccess.getProcedureRule()) {
+				if(context == grammarAccess.getProcedureRule()) {
 					sequence_Procedure(context, (Procedure) semanticObject); 
 					return; 
 				}
@@ -164,7 +169,7 @@ public class AbstractJPasSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (params+=Param* returntype=Datatype variableDeclaration=VariableDeclaration? statementsequence=StatementSequence)
+	 *     (name=ID params+=Param* returntype=Datatype variableDeclaration=VariableDeclaration? statementsequence=StatementSequence)
 	 */
 	protected void sequence_Function(EObject context, Function semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -176,6 +181,15 @@ public class AbstractJPasSemanticSequencer extends AbstractSemanticSequencer {
 	 *     (left=Expression operator=Operator right=Expression ifstatements=StatementSequence elsestatements=StatementSequence?)
 	 */
 	protected void sequence_IfStatement(EObject context, Condition semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (function=Function | procedure=Procedure)
+	 */
+	protected void sequence_Method(EObject context, Method semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -217,26 +231,16 @@ public class AbstractJPasSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (name=ID type=Datatype)
+	 *     (out='var'? name=ID type=Datatype)
 	 */
 	protected void sequence_ProcParam(EObject context, ProcParam semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, JPasPackage.Literals.PROC_PARAM__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPasPackage.Literals.PROC_PARAM__NAME));
-			if(transientValues.isValueTransient(semanticObject, JPasPackage.Literals.PROC_PARAM__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPasPackage.Literals.PROC_PARAM__TYPE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getProcParamAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getProcParamAccess().getTypeDatatypeEnumRuleCall_3_0(), semanticObject.getType());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
 	/**
 	 * Constraint:
-	 *     (params+=ProcParam* variableDeclaration=VariableDeclaration? statementsequence=StatementSequence)
+	 *     (name=ID params+=ProcParam* variableDeclaration=VariableDeclaration? statementsequence=StatementSequence)
 	 */
 	protected void sequence_Procedure(EObject context, Procedure semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -272,19 +276,19 @@ public class AbstractJPasSemanticSequencer extends AbstractSemanticSequencer {
 	
 	/**
 	 * Constraint:
-	 *     (type=Datatype name=ID)
+	 *     (name=ID type=Datatype)
 	 */
 	protected void sequence_Variable(EObject context, Variable semanticObject) {
 		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, JPasPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPasPackage.Literals.VARIABLE__TYPE));
 			if(transientValues.isValueTransient(semanticObject, JPasPackage.Literals.VARIABLE__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPasPackage.Literals.VARIABLE__NAME));
+			if(transientValues.isValueTransient(semanticObject, JPasPackage.Literals.VARIABLE__TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, JPasPackage.Literals.VARIABLE__TYPE));
 		}
 		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getVariableAccess().getTypeDatatypeEnumRuleCall_0_0(), semanticObject.getType());
-		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_2_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_0_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getVariableAccess().getTypeDatatypeEnumRuleCall_2_0(), semanticObject.getType());
 		feeder.finish();
 	}
 	

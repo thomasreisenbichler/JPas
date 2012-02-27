@@ -100,7 +100,6 @@ public class JPasSwitch<T> extends Switch<T>
       {
         Function function = (Function)theEObject;
         T result = caseFunction(function);
-        if (result == null) result = caseMethod(function);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -108,7 +107,6 @@ public class JPasSwitch<T> extends Switch<T>
       {
         Procedure procedure = (Procedure)theEObject;
         T result = caseProcedure(procedure);
-        if (result == null) result = caseMethod(procedure);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

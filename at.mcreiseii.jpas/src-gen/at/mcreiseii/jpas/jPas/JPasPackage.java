@@ -154,22 +154,22 @@ public interface JPasPackage extends EPackage
   int METHOD = 2;
 
   /**
-   * The feature id for the '<em><b>Variable Declaration</b></em>' containment reference.
+   * The feature id for the '<em><b>Function</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METHOD__VARIABLE_DECLARATION = 0;
+  int METHOD__FUNCTION = 0;
 
   /**
-   * The feature id for the '<em><b>Statementsequence</b></em>' containment reference.
+   * The feature id for the '<em><b>Procedure</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METHOD__STATEMENTSEQUENCE = 1;
+  int METHOD__PROCEDURE = 1;
 
   /**
    * The number of structural features of the '<em>Method</em>' class.
@@ -191,22 +191,13 @@ public interface JPasPackage extends EPackage
   int FUNCTION = 3;
 
   /**
-   * The feature id for the '<em><b>Variable Declaration</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int FUNCTION__VARIABLE_DECLARATION = METHOD__VARIABLE_DECLARATION;
-
-  /**
-   * The feature id for the '<em><b>Statementsequence</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FUNCTION__STATEMENTSEQUENCE = METHOD__STATEMENTSEQUENCE;
+  int FUNCTION__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -215,7 +206,7 @@ public interface JPasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__PARAMS = METHOD_FEATURE_COUNT + 0;
+  int FUNCTION__PARAMS = 1;
 
   /**
    * The feature id for the '<em><b>Returntype</b></em>' attribute.
@@ -224,7 +215,25 @@ public interface JPasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION__RETURNTYPE = METHOD_FEATURE_COUNT + 1;
+  int FUNCTION__RETURNTYPE = 2;
+
+  /**
+   * The feature id for the '<em><b>Variable Declaration</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__VARIABLE_DECLARATION = 3;
+
+  /**
+   * The feature id for the '<em><b>Statementsequence</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FUNCTION__STATEMENTSEQUENCE = 4;
 
   /**
    * The number of structural features of the '<em>Function</em>' class.
@@ -233,7 +242,7 @@ public interface JPasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int FUNCTION_FEATURE_COUNT = METHOD_FEATURE_COUNT + 2;
+  int FUNCTION_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link at.mcreiseii.jpas.jPas.impl.ProcedureImpl <em>Procedure</em>}' class.
@@ -246,22 +255,13 @@ public interface JPasPackage extends EPackage
   int PROCEDURE = 4;
 
   /**
-   * The feature id for the '<em><b>Variable Declaration</b></em>' containment reference.
+   * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROCEDURE__VARIABLE_DECLARATION = METHOD__VARIABLE_DECLARATION;
-
-  /**
-   * The feature id for the '<em><b>Statementsequence</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int PROCEDURE__STATEMENTSEQUENCE = METHOD__STATEMENTSEQUENCE;
+  int PROCEDURE__NAME = 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -270,7 +270,25 @@ public interface JPasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROCEDURE__PARAMS = METHOD_FEATURE_COUNT + 0;
+  int PROCEDURE__PARAMS = 1;
+
+  /**
+   * The feature id for the '<em><b>Variable Declaration</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE__VARIABLE_DECLARATION = 2;
+
+  /**
+   * The feature id for the '<em><b>Statementsequence</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROCEDURE__STATEMENTSEQUENCE = 3;
 
   /**
    * The number of structural features of the '<em>Procedure</em>' class.
@@ -279,7 +297,7 @@ public interface JPasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROCEDURE_FEATURE_COUNT = METHOD_FEATURE_COUNT + 1;
+  int PROCEDURE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link at.mcreiseii.jpas.jPas.impl.ProcParamImpl <em>Proc Param</em>}' class.
@@ -292,13 +310,22 @@ public interface JPasPackage extends EPackage
   int PROC_PARAM = 5;
 
   /**
+   * The feature id for the '<em><b>Out</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int PROC_PARAM__OUT = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PROC_PARAM__NAME = 0;
+  int PROC_PARAM__NAME = 1;
 
   /**
    * The feature id for the '<em><b>Type</b></em>' attribute.
@@ -307,7 +334,7 @@ public interface JPasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROC_PARAM__TYPE = 1;
+  int PROC_PARAM__TYPE = 2;
 
   /**
    * The number of structural features of the '<em>Proc Param</em>' class.
@@ -316,7 +343,7 @@ public interface JPasPackage extends EPackage
    * @generated
    * @ordered
    */
-  int PROC_PARAM_FEATURE_COUNT = 2;
+  int PROC_PARAM_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link at.mcreiseii.jpas.jPas.impl.ParamImpl <em>Param</em>}' class.
@@ -394,22 +421,22 @@ public interface JPasPackage extends EPackage
   int VARIABLE = 8;
 
   /**
-   * The feature id for the '<em><b>Type</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VARIABLE__TYPE = 0;
-
-  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE__NAME = 1;
+  int VARIABLE__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Type</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VARIABLE__TYPE = 1;
 
   /**
    * The number of structural features of the '<em>Variable</em>' class.
@@ -713,26 +740,26 @@ public interface JPasPackage extends EPackage
   EClass getMethod();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Method#getVariableDeclaration <em>Variable Declaration</em>}'.
+   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Method#getFunction <em>Function</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Variable Declaration</em>'.
-   * @see at.mcreiseii.jpas.jPas.Method#getVariableDeclaration()
+   * @return the meta object for the containment reference '<em>Function</em>'.
+   * @see at.mcreiseii.jpas.jPas.Method#getFunction()
    * @see #getMethod()
    * @generated
    */
-  EReference getMethod_VariableDeclaration();
+  EReference getMethod_Function();
 
   /**
-   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Method#getStatementsequence <em>Statementsequence</em>}'.
+   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Method#getProcedure <em>Procedure</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Statementsequence</em>'.
-   * @see at.mcreiseii.jpas.jPas.Method#getStatementsequence()
+   * @return the meta object for the containment reference '<em>Procedure</em>'.
+   * @see at.mcreiseii.jpas.jPas.Method#getProcedure()
    * @see #getMethod()
    * @generated
    */
-  EReference getMethod_Statementsequence();
+  EReference getMethod_Procedure();
 
   /**
    * Returns the meta object for class '{@link at.mcreiseii.jpas.jPas.Function <em>Function</em>}'.
@@ -743,6 +770,17 @@ public interface JPasPackage extends EPackage
    * @generated
    */
   EClass getFunction();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.mcreiseii.jpas.jPas.Function#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.mcreiseii.jpas.jPas.Function#getName()
+   * @see #getFunction()
+   * @generated
+   */
+  EAttribute getFunction_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.mcreiseii.jpas.jPas.Function#getParams <em>Params</em>}'.
@@ -767,6 +805,28 @@ public interface JPasPackage extends EPackage
   EAttribute getFunction_Returntype();
 
   /**
+   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Function#getVariableDeclaration <em>Variable Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable Declaration</em>'.
+   * @see at.mcreiseii.jpas.jPas.Function#getVariableDeclaration()
+   * @see #getFunction()
+   * @generated
+   */
+  EReference getFunction_VariableDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Function#getStatementsequence <em>Statementsequence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statementsequence</em>'.
+   * @see at.mcreiseii.jpas.jPas.Function#getStatementsequence()
+   * @see #getFunction()
+   * @generated
+   */
+  EReference getFunction_Statementsequence();
+
+  /**
    * Returns the meta object for class '{@link at.mcreiseii.jpas.jPas.Procedure <em>Procedure</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -775,6 +835,17 @@ public interface JPasPackage extends EPackage
    * @generated
    */
   EClass getProcedure();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.mcreiseii.jpas.jPas.Procedure#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see at.mcreiseii.jpas.jPas.Procedure#getName()
+   * @see #getProcedure()
+   * @generated
+   */
+  EAttribute getProcedure_Name();
 
   /**
    * Returns the meta object for the containment reference list '{@link at.mcreiseii.jpas.jPas.Procedure#getParams <em>Params</em>}'.
@@ -788,6 +859,28 @@ public interface JPasPackage extends EPackage
   EReference getProcedure_Params();
 
   /**
+   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Procedure#getVariableDeclaration <em>Variable Declaration</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Variable Declaration</em>'.
+   * @see at.mcreiseii.jpas.jPas.Procedure#getVariableDeclaration()
+   * @see #getProcedure()
+   * @generated
+   */
+  EReference getProcedure_VariableDeclaration();
+
+  /**
+   * Returns the meta object for the containment reference '{@link at.mcreiseii.jpas.jPas.Procedure#getStatementsequence <em>Statementsequence</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Statementsequence</em>'.
+   * @see at.mcreiseii.jpas.jPas.Procedure#getStatementsequence()
+   * @see #getProcedure()
+   * @generated
+   */
+  EReference getProcedure_Statementsequence();
+
+  /**
    * Returns the meta object for class '{@link at.mcreiseii.jpas.jPas.ProcParam <em>Proc Param</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -796,6 +889,17 @@ public interface JPasPackage extends EPackage
    * @generated
    */
   EClass getProcParam();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.mcreiseii.jpas.jPas.ProcParam#getOut <em>Out</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Out</em>'.
+   * @see at.mcreiseii.jpas.jPas.ProcParam#getOut()
+   * @see #getProcParam()
+   * @generated
+   */
+  EAttribute getProcParam_Out();
 
   /**
    * Returns the meta object for the attribute '{@link at.mcreiseii.jpas.jPas.ProcParam#getName <em>Name</em>}'.
@@ -883,17 +987,6 @@ public interface JPasPackage extends EPackage
   EClass getVariable();
 
   /**
-   * Returns the meta object for the attribute '{@link at.mcreiseii.jpas.jPas.Variable#getType <em>Type</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Type</em>'.
-   * @see at.mcreiseii.jpas.jPas.Variable#getType()
-   * @see #getVariable()
-   * @generated
-   */
-  EAttribute getVariable_Type();
-
-  /**
    * Returns the meta object for the attribute '{@link at.mcreiseii.jpas.jPas.Variable#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -903,6 +996,17 @@ public interface JPasPackage extends EPackage
    * @generated
    */
   EAttribute getVariable_Name();
+
+  /**
+   * Returns the meta object for the attribute '{@link at.mcreiseii.jpas.jPas.Variable#getType <em>Type</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Type</em>'.
+   * @see at.mcreiseii.jpas.jPas.Variable#getType()
+   * @see #getVariable()
+   * @generated
+   */
+  EAttribute getVariable_Type();
 
   /**
    * Returns the meta object for class '{@link at.mcreiseii.jpas.jPas.StatementSequence <em>Statement Sequence</em>}'.
@@ -1166,20 +1270,20 @@ public interface JPasPackage extends EPackage
     EClass METHOD = eINSTANCE.getMethod();
 
     /**
-     * The meta object literal for the '<em><b>Variable Declaration</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Function</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference METHOD__VARIABLE_DECLARATION = eINSTANCE.getMethod_VariableDeclaration();
+    EReference METHOD__FUNCTION = eINSTANCE.getMethod_Function();
 
     /**
-     * The meta object literal for the '<em><b>Statementsequence</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Procedure</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference METHOD__STATEMENTSEQUENCE = eINSTANCE.getMethod_Statementsequence();
+    EReference METHOD__PROCEDURE = eINSTANCE.getMethod_Procedure();
 
     /**
      * The meta object literal for the '{@link at.mcreiseii.jpas.jPas.impl.FunctionImpl <em>Function</em>}' class.
@@ -1190,6 +1294,14 @@ public interface JPasPackage extends EPackage
      * @generated
      */
     EClass FUNCTION = eINSTANCE.getFunction();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FUNCTION__NAME = eINSTANCE.getFunction_Name();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
@@ -1208,6 +1320,22 @@ public interface JPasPackage extends EPackage
     EAttribute FUNCTION__RETURNTYPE = eINSTANCE.getFunction_Returntype();
 
     /**
+     * The meta object literal for the '<em><b>Variable Declaration</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__VARIABLE_DECLARATION = eINSTANCE.getFunction_VariableDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Statementsequence</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FUNCTION__STATEMENTSEQUENCE = eINSTANCE.getFunction_Statementsequence();
+
+    /**
      * The meta object literal for the '{@link at.mcreiseii.jpas.jPas.impl.ProcedureImpl <em>Procedure</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1218,12 +1346,36 @@ public interface JPasPackage extends EPackage
     EClass PROCEDURE = eINSTANCE.getProcedure();
 
     /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROCEDURE__NAME = eINSTANCE.getProcedure_Name();
+
+    /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference PROCEDURE__PARAMS = eINSTANCE.getProcedure_Params();
+
+    /**
+     * The meta object literal for the '<em><b>Variable Declaration</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROCEDURE__VARIABLE_DECLARATION = eINSTANCE.getProcedure_VariableDeclaration();
+
+    /**
+     * The meta object literal for the '<em><b>Statementsequence</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference PROCEDURE__STATEMENTSEQUENCE = eINSTANCE.getProcedure_Statementsequence();
 
     /**
      * The meta object literal for the '{@link at.mcreiseii.jpas.jPas.impl.ProcParamImpl <em>Proc Param</em>}' class.
@@ -1234,6 +1386,14 @@ public interface JPasPackage extends EPackage
      * @generated
      */
     EClass PROC_PARAM = eINSTANCE.getProcParam();
+
+    /**
+     * The meta object literal for the '<em><b>Out</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute PROC_PARAM__OUT = eINSTANCE.getProcParam_Out();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -1306,20 +1466,20 @@ public interface JPasPackage extends EPackage
     EClass VARIABLE = eINSTANCE.getVariable();
 
     /**
-     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
-
-    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
     /**
      * The meta object literal for the '{@link at.mcreiseii.jpas.jPas.impl.StatementSequenceImpl <em>Statement Sequence</em>}' class.

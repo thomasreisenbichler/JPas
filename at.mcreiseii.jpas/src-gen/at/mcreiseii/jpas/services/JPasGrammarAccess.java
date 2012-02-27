@@ -88,163 +88,191 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 	public class MethodElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Method");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cFunctionParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cProcedureParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final Assignment cFunctionAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
+		private final RuleCall cFunctionFunctionParserRuleCall_0_0 = (RuleCall)cFunctionAssignment_0.eContents().get(0);
+		private final Assignment cProcedureAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
+		private final RuleCall cProcedureProcedureParserRuleCall_1_0 = (RuleCall)cProcedureAssignment_1.eContents().get(0);
 		
 		//Method:
-		//	Function | Procedure;
+		//	function=Function | procedure=Procedure;
 		public ParserRule getRule() { return rule; }
 
-		//Function | Procedure
+		//function=Function | procedure=Procedure
 		public Alternatives getAlternatives() { return cAlternatives; }
 
+		//function=Function
+		public Assignment getFunctionAssignment_0() { return cFunctionAssignment_0; }
+
 		//Function
-		public RuleCall getFunctionParserRuleCall_0() { return cFunctionParserRuleCall_0; }
+		public RuleCall getFunctionFunctionParserRuleCall_0_0() { return cFunctionFunctionParserRuleCall_0_0; }
+
+		//procedure=Procedure
+		public Assignment getProcedureAssignment_1() { return cProcedureAssignment_1; }
 
 		//Procedure
-		public RuleCall getProcedureParserRuleCall_1() { return cProcedureParserRuleCall_1; }
+		public RuleCall getProcedureProcedureParserRuleCall_1_0() { return cProcedureProcedureParserRuleCall_1_0; }
 	}
 
 	public class FunctionElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Function");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cFunctionKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cLbraceTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cParamsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParamsParamParserRuleCall_2_0 = (RuleCall)cParamsAssignment_2.eContents().get(0);
-		private final RuleCall cRbraceTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final RuleCall cColonTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
-		private final Assignment cReturntypeAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cReturntypeDatatypeEnumRuleCall_5_0 = (RuleCall)cReturntypeAssignment_5.eContents().get(0);
-		private final Assignment cVariableDeclarationAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cVariableDeclarationVariableDeclarationParserRuleCall_6_0 = (RuleCall)cVariableDeclarationAssignment_6.eContents().get(0);
-		private final Assignment cStatementsequenceAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cStatementsequenceStatementSequenceParserRuleCall_7_0 = (RuleCall)cStatementsequenceAssignment_7.eContents().get(0);
-		private final RuleCall cSemicolonTerminalRuleCall_8 = (RuleCall)cGroup.eContents().get(8);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cLbraceTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cParamsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cParamsParamParserRuleCall_3_0 = (RuleCall)cParamsAssignment_3.eContents().get(0);
+		private final RuleCall cRbraceTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final RuleCall cColonTerminalRuleCall_5 = (RuleCall)cGroup.eContents().get(5);
+		private final Assignment cReturntypeAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cReturntypeDatatypeEnumRuleCall_6_0 = (RuleCall)cReturntypeAssignment_6.eContents().get(0);
+		private final Assignment cVariableDeclarationAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cVariableDeclarationVariableDeclarationParserRuleCall_7_0 = (RuleCall)cVariableDeclarationAssignment_7.eContents().get(0);
+		private final Assignment cStatementsequenceAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cStatementsequenceStatementSequenceParserRuleCall_8_0 = (RuleCall)cStatementsequenceAssignment_8.eContents().get(0);
+		private final RuleCall cSemicolonTerminalRuleCall_9 = (RuleCall)cGroup.eContents().get(9);
 		
 		//Function:
-		//	"function" lbrace params+=Param* rbrace colon returntype=Datatype variableDeclaration=VariableDeclaration?
+		//	"function" name=ID lbrace params+=Param* rbrace colon returntype=Datatype variableDeclaration=VariableDeclaration?
 		//	statementsequence=StatementSequence semicolon;
 		public ParserRule getRule() { return rule; }
 
-		//"function" lbrace params+=Param* rbrace colon returntype=Datatype variableDeclaration=VariableDeclaration?
+		//"function" name=ID lbrace params+=Param* rbrace colon returntype=Datatype variableDeclaration=VariableDeclaration?
 		//statementsequence=StatementSequence semicolon
 		public Group getGroup() { return cGroup; }
 
 		//"function"
 		public Keyword getFunctionKeyword_0() { return cFunctionKeyword_0; }
 
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
 		//lbrace
-		public RuleCall getLbraceTerminalRuleCall_1() { return cLbraceTerminalRuleCall_1; }
+		public RuleCall getLbraceTerminalRuleCall_2() { return cLbraceTerminalRuleCall_2; }
 
 		//params+=Param*
-		public Assignment getParamsAssignment_2() { return cParamsAssignment_2; }
+		public Assignment getParamsAssignment_3() { return cParamsAssignment_3; }
 
 		//Param
-		public RuleCall getParamsParamParserRuleCall_2_0() { return cParamsParamParserRuleCall_2_0; }
+		public RuleCall getParamsParamParserRuleCall_3_0() { return cParamsParamParserRuleCall_3_0; }
 
 		//rbrace
-		public RuleCall getRbraceTerminalRuleCall_3() { return cRbraceTerminalRuleCall_3; }
+		public RuleCall getRbraceTerminalRuleCall_4() { return cRbraceTerminalRuleCall_4; }
 
 		//colon
-		public RuleCall getColonTerminalRuleCall_4() { return cColonTerminalRuleCall_4; }
+		public RuleCall getColonTerminalRuleCall_5() { return cColonTerminalRuleCall_5; }
 
 		//returntype=Datatype
-		public Assignment getReturntypeAssignment_5() { return cReturntypeAssignment_5; }
+		public Assignment getReturntypeAssignment_6() { return cReturntypeAssignment_6; }
 
 		//Datatype
-		public RuleCall getReturntypeDatatypeEnumRuleCall_5_0() { return cReturntypeDatatypeEnumRuleCall_5_0; }
+		public RuleCall getReturntypeDatatypeEnumRuleCall_6_0() { return cReturntypeDatatypeEnumRuleCall_6_0; }
 
 		//variableDeclaration=VariableDeclaration?
-		public Assignment getVariableDeclarationAssignment_6() { return cVariableDeclarationAssignment_6; }
+		public Assignment getVariableDeclarationAssignment_7() { return cVariableDeclarationAssignment_7; }
 
 		//VariableDeclaration
-		public RuleCall getVariableDeclarationVariableDeclarationParserRuleCall_6_0() { return cVariableDeclarationVariableDeclarationParserRuleCall_6_0; }
+		public RuleCall getVariableDeclarationVariableDeclarationParserRuleCall_7_0() { return cVariableDeclarationVariableDeclarationParserRuleCall_7_0; }
 
 		//statementsequence=StatementSequence
-		public Assignment getStatementsequenceAssignment_7() { return cStatementsequenceAssignment_7; }
+		public Assignment getStatementsequenceAssignment_8() { return cStatementsequenceAssignment_8; }
 
 		//StatementSequence
-		public RuleCall getStatementsequenceStatementSequenceParserRuleCall_7_0() { return cStatementsequenceStatementSequenceParserRuleCall_7_0; }
+		public RuleCall getStatementsequenceStatementSequenceParserRuleCall_8_0() { return cStatementsequenceStatementSequenceParserRuleCall_8_0; }
 
 		//semicolon
-		public RuleCall getSemicolonTerminalRuleCall_8() { return cSemicolonTerminalRuleCall_8; }
+		public RuleCall getSemicolonTerminalRuleCall_9() { return cSemicolonTerminalRuleCall_9; }
 	}
 
 	public class ProcedureElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Procedure");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cProcedureKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final RuleCall cLbraceTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cParamsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cParamsProcParamParserRuleCall_2_0 = (RuleCall)cParamsAssignment_2.eContents().get(0);
-		private final RuleCall cRbraceTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
-		private final Assignment cVariableDeclarationAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cVariableDeclarationVariableDeclarationParserRuleCall_4_0 = (RuleCall)cVariableDeclarationAssignment_4.eContents().get(0);
-		private final Assignment cStatementsequenceAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cStatementsequenceStatementSequenceParserRuleCall_5_0 = (RuleCall)cStatementsequenceAssignment_5.eContents().get(0);
-		private final RuleCall cSemicolonTerminalRuleCall_6 = (RuleCall)cGroup.eContents().get(6);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final RuleCall cLbraceTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
+		private final Assignment cParamsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cParamsProcParamParserRuleCall_3_0 = (RuleCall)cParamsAssignment_3.eContents().get(0);
+		private final RuleCall cRbraceTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final Assignment cVariableDeclarationAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cVariableDeclarationVariableDeclarationParserRuleCall_5_0 = (RuleCall)cVariableDeclarationAssignment_5.eContents().get(0);
+		private final Assignment cStatementsequenceAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cStatementsequenceStatementSequenceParserRuleCall_6_0 = (RuleCall)cStatementsequenceAssignment_6.eContents().get(0);
+		private final RuleCall cSemicolonTerminalRuleCall_7 = (RuleCall)cGroup.eContents().get(7);
 		
 		//Procedure:
-		//	"procedure" lbrace params+=ProcParam* rbrace variableDeclaration=VariableDeclaration?
+		//	"procedure" name=ID lbrace params+=ProcParam* rbrace variableDeclaration=VariableDeclaration?
 		//	statementsequence=StatementSequence semicolon;
 		public ParserRule getRule() { return rule; }
 
-		//"procedure" lbrace params+=ProcParam* rbrace variableDeclaration=VariableDeclaration?
+		//"procedure" name=ID lbrace params+=ProcParam* rbrace variableDeclaration=VariableDeclaration?
 		//statementsequence=StatementSequence semicolon
 		public Group getGroup() { return cGroup; }
 
 		//"procedure"
 		public Keyword getProcedureKeyword_0() { return cProcedureKeyword_0; }
 
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
 		//lbrace
-		public RuleCall getLbraceTerminalRuleCall_1() { return cLbraceTerminalRuleCall_1; }
+		public RuleCall getLbraceTerminalRuleCall_2() { return cLbraceTerminalRuleCall_2; }
 
 		//params+=ProcParam*
-		public Assignment getParamsAssignment_2() { return cParamsAssignment_2; }
+		public Assignment getParamsAssignment_3() { return cParamsAssignment_3; }
 
 		//ProcParam
-		public RuleCall getParamsProcParamParserRuleCall_2_0() { return cParamsProcParamParserRuleCall_2_0; }
+		public RuleCall getParamsProcParamParserRuleCall_3_0() { return cParamsProcParamParserRuleCall_3_0; }
 
 		//rbrace
-		public RuleCall getRbraceTerminalRuleCall_3() { return cRbraceTerminalRuleCall_3; }
+		public RuleCall getRbraceTerminalRuleCall_4() { return cRbraceTerminalRuleCall_4; }
 
 		//variableDeclaration=VariableDeclaration?
-		public Assignment getVariableDeclarationAssignment_4() { return cVariableDeclarationAssignment_4; }
+		public Assignment getVariableDeclarationAssignment_5() { return cVariableDeclarationAssignment_5; }
 
 		//VariableDeclaration
-		public RuleCall getVariableDeclarationVariableDeclarationParserRuleCall_4_0() { return cVariableDeclarationVariableDeclarationParserRuleCall_4_0; }
+		public RuleCall getVariableDeclarationVariableDeclarationParserRuleCall_5_0() { return cVariableDeclarationVariableDeclarationParserRuleCall_5_0; }
 
 		//statementsequence=StatementSequence
-		public Assignment getStatementsequenceAssignment_5() { return cStatementsequenceAssignment_5; }
+		public Assignment getStatementsequenceAssignment_6() { return cStatementsequenceAssignment_6; }
 
 		//StatementSequence
-		public RuleCall getStatementsequenceStatementSequenceParserRuleCall_5_0() { return cStatementsequenceStatementSequenceParserRuleCall_5_0; }
+		public RuleCall getStatementsequenceStatementSequenceParserRuleCall_6_0() { return cStatementsequenceStatementSequenceParserRuleCall_6_0; }
 
 		//semicolon
-		public RuleCall getSemicolonTerminalRuleCall_6() { return cSemicolonTerminalRuleCall_6; }
+		public RuleCall getSemicolonTerminalRuleCall_7() { return cSemicolonTerminalRuleCall_7; }
 	}
 
 	public class ProcParamElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ProcParam");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cVarKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cOutAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final Keyword cOutVarKeyword_0_0 = (Keyword)cOutAssignment_0.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final RuleCall cColonTerminalRuleCall_2 = (RuleCall)cGroup.eContents().get(2);
 		private final Assignment cTypeAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cTypeDatatypeEnumRuleCall_3_0 = (RuleCall)cTypeAssignment_3.eContents().get(0);
-		private final RuleCall cCommaTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
+		private final RuleCall cSemicolonTerminalRuleCall_4 = (RuleCall)cGroup.eContents().get(4);
 		
 		//ProcParam:
-		//	"var"? name=ID colon type=Datatype comma?;
+		//	out="var"? name=ID colon type=Datatype semicolon?;
 		public ParserRule getRule() { return rule; }
 
-		//"var"? name=ID colon type=Datatype comma?
+		//out="var"? name=ID colon type=Datatype semicolon?
 		public Group getGroup() { return cGroup; }
 
-		//"var"?
-		public Keyword getVarKeyword_0() { return cVarKeyword_0; }
+		//out="var"?
+		public Assignment getOutAssignment_0() { return cOutAssignment_0; }
+
+		//"var"
+		public Keyword getOutVarKeyword_0_0() { return cOutVarKeyword_0_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -261,8 +289,8 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 		//Datatype
 		public RuleCall getTypeDatatypeEnumRuleCall_3_0() { return cTypeDatatypeEnumRuleCall_3_0; }
 
-		//comma?
-		public RuleCall getCommaTerminalRuleCall_4() { return cCommaTerminalRuleCall_4; }
+		//semicolon?
+		public RuleCall getSemicolonTerminalRuleCall_4() { return cSemicolonTerminalRuleCall_4; }
 	}
 
 	public class ParamElements extends AbstractParserRuleElementFinder {
@@ -328,36 +356,36 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 	public class VariableElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Variable");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cTypeAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cTypeDatatypeEnumRuleCall_0_0 = (RuleCall)cTypeAssignment_0.eContents().get(0);
+		private final Assignment cNameAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cNameIDTerminalRuleCall_0_0 = (RuleCall)cNameAssignment_0.eContents().get(0);
 		private final RuleCall cColonTerminalRuleCall_1 = (RuleCall)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cTypeDatatypeEnumRuleCall_2_0 = (RuleCall)cTypeAssignment_2.eContents().get(0);
 		private final RuleCall cSemicolonTerminalRuleCall_3 = (RuleCall)cGroup.eContents().get(3);
 		
 		//Variable:
-		//	type=Datatype colon name=ID semicolon?;
+		//	name=ID colon type=Datatype semicolon;
 		public ParserRule getRule() { return rule; }
 
-		//type=Datatype colon name=ID semicolon?
+		//name=ID colon type=Datatype semicolon
 		public Group getGroup() { return cGroup; }
 
-		//type=Datatype
-		public Assignment getTypeAssignment_0() { return cTypeAssignment_0; }
+		//name=ID
+		public Assignment getNameAssignment_0() { return cNameAssignment_0; }
 
-		//Datatype
-		public RuleCall getTypeDatatypeEnumRuleCall_0_0() { return cTypeDatatypeEnumRuleCall_0_0; }
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_0_0() { return cNameIDTerminalRuleCall_0_0; }
 
 		//colon
 		public RuleCall getColonTerminalRuleCall_1() { return cColonTerminalRuleCall_1; }
 
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		//type=Datatype
+		public Assignment getTypeAssignment_2() { return cTypeAssignment_2; }
 
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		//Datatype
+		public RuleCall getTypeDatatypeEnumRuleCall_2_0() { return cTypeDatatypeEnumRuleCall_2_0; }
 
-		//semicolon?
+		//semicolon
 		public RuleCall getSemicolonTerminalRuleCall_3() { return cSemicolonTerminalRuleCall_3; }
 	}
 
@@ -848,7 +876,7 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Method:
-	//	Function | Procedure;
+	//	function=Function | procedure=Procedure;
 	public MethodElements getMethodAccess() {
 		return (pMethod != null) ? pMethod : (pMethod = new MethodElements());
 	}
@@ -858,7 +886,7 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Function:
-	//	"function" lbrace params+=Param* rbrace colon returntype=Datatype variableDeclaration=VariableDeclaration?
+	//	"function" name=ID lbrace params+=Param* rbrace colon returntype=Datatype variableDeclaration=VariableDeclaration?
 	//	statementsequence=StatementSequence semicolon;
 	public FunctionElements getFunctionAccess() {
 		return (pFunction != null) ? pFunction : (pFunction = new FunctionElements());
@@ -869,7 +897,7 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Procedure:
-	//	"procedure" lbrace params+=ProcParam* rbrace variableDeclaration=VariableDeclaration?
+	//	"procedure" name=ID lbrace params+=ProcParam* rbrace variableDeclaration=VariableDeclaration?
 	//	statementsequence=StatementSequence semicolon;
 	public ProcedureElements getProcedureAccess() {
 		return (pProcedure != null) ? pProcedure : (pProcedure = new ProcedureElements());
@@ -880,7 +908,7 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//ProcParam:
-	//	"var"? name=ID colon type=Datatype comma?;
+	//	out="var"? name=ID colon type=Datatype semicolon?;
 	public ProcParamElements getProcParamAccess() {
 		return (pProcParam != null) ? pProcParam : (pProcParam = new ProcParamElements());
 	}
@@ -910,7 +938,7 @@ public class JPasGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	//Variable:
-	//	type=Datatype colon name=ID semicolon?;
+	//	name=ID colon type=Datatype semicolon;
 	public VariableElements getVariableAccess() {
 		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
 	}
